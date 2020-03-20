@@ -42,14 +42,13 @@ set nofoldenable	"启动时关闭代码折叠
 "================================================
 call plug#begin('$HOME/.vim/plugged')
 
-" defx
-if has('nvim')
-    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/defx.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" NERDTree
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'greggerz/nerdtree-svn-plugin'
+" let NERDTreeWinPos='left'
+" let NERDTreeWinSize=50
+map <F2> :NERDTreeToggle<CR>
 
 " TabBar
 Plug 'humiaozuzu/TabBar'
@@ -59,6 +58,7 @@ let g:Tb_TabWrap = 1
 " tagbar
 Plug 'majutsushi/tagbar'
 map <F3> :TagbarToggle<CR>
+map <A-w> :Tbbd<CR>
 
 " emmet
 Plug 'mattn/emmet-vim'
@@ -88,7 +88,7 @@ Plug 'mhinz/vim-signify'
 
 " 主题
 Plug 'dracula/vim', { 'as': 'dracula' }
-set rtp+=$HOME/.vim/plugged/vim/
+set rtp+=$HOME/.vim/plugged/dracula/
 colorscheme dracula
 
 call plug#end()
