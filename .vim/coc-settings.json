@@ -1,0 +1,45 @@
+{
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+    "coc.preferences.colorSupport": true,
+    "suggest.enablePreview": true,
+    "suggest.echodocSupport": true,
+    "languageserver": {
+        "dart": {
+            "command": "dart",
+            "args": [
+                "/usr/local/opt/dart/libexec/bin/snapshots/analysis_server.dart.snapshot",
+                "--lsp"
+            ],
+            "filetypes": ["dart"],
+            "disableDynamicRegister": true,
+            "trace.server": "verbose"
+        },
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPath": ["~"]
+        },
+        "groovy": {
+            "command": "java",
+            "args": ["-jar", "/opt/groovy-language-server/build/libs/groovy-language-server.jar"],
+            "filetypes": ["groovy"]
+        },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod"],
+            "disableWorkspaceFolders": true,
+            "filetypes": ["go"]
+        }
+    }
+} 
