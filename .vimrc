@@ -36,11 +36,28 @@ set nofoldenable	"启动时关闭代码折叠
 " vnoremap $q <esc>`>a'<esc>`<i'<esc>
 " vnoremap $e <esc>`>a“<esc>`<i”<esc>
 
+" 使用Tab键自动补全
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<Tab>" :
+    \ coc#refresh()
+
+" 使用回车键结束补全
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 "================================================
 "        plug插件
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "================================================
 call plug#begin('$HOME/.vim/plugged')
+
+" 自动补全
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " NERDTree
 Plug 'preservim/nerdtree'
@@ -60,30 +77,18 @@ Plug 'majutsushi/tagbar'
 map <F3> :TagbarToggle<CR>
 map <A-w> :Tbbd<CR>
 
-" emmet
-Plug 'mattn/emmet-vim'
-let g:user_emmet_expandabbr_key='C-j'
-
 " vim-airline
 Plug 'bling/vim-airline'
 
-" 代码块
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-let g:UltiSnipsSnippetDirectories=["mysnippets"]
-let g:UltiSnipsExpandTrigger="<leader><tab>"
-let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
-let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
-
 " Vue高亮
-Plug 'posva/vim-vue'
-au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css
-au BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
-
-" 自动补齐括号
-Plug 'jiangmiao/auto-pairs'
+"Plug 'posva/vim-vue'
+"au BufRead,BufNewFile *.wpy setlocal filetype=vue.html.javascript.css
+"au BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 " 注释
+Plug 'preservim/nerdcommenter'
+
+" 版本控制行显示
 Plug 'mhinz/vim-signify'
 
 " 主题
