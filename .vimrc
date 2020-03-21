@@ -57,7 +57,17 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 call plug#begin('$HOME/.vim/plugged')
 
 " 自动补全
+" install yarn node
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" coc-emmet coc-highlight coc-pairs coc-snippet coc-lists coc-yank coc-git
+" coc-json coc-html coc-css coc-wxml coc-eslint coc-python coc-yaml
+" ccls - required ccls
+" coc-flutter - install flutter dart
+" bash - npm i -g bash-language-server
+" coc-vetur - npm i -g vue-language-server
+" coc-java - required jdk
+" coc-prettier
+command! -nargs=0 Prettier :CocComand prettier.formatFile
 
 " NERDTree
 Plug 'preservim/nerdtree'
