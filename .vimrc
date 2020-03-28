@@ -61,6 +61,7 @@ call plug#begin('$HOME/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-emmet coc-highlight coc-pairs coc-snippet coc-lists coc-yank coc-git
 " coc-json coc-html coc-css coc-wxml coc-eslint coc-python coc-yaml
+" coc-tabnine coc-terminal coc-lua coc-sql coc-texlab
 " ccls - required ccls
 " coc-flutter - install flutter dart
 " bash - npm i -g bash-language-server
