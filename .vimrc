@@ -86,7 +86,7 @@ let g:Tb_TabWrap = 1
 " tagbar
 Plug 'majutsushi/tagbar'
 map <F3> :TagbarToggle<CR>
-map <A-w> :Tbbd<CR>
+map <leader>td :Tbbd<CR>
 
 " vim-airline
 Plug 'bling/vim-airline'

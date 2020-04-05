@@ -27,8 +27,7 @@
         "bash": {
             "command": "bash-language-server",
             "args": ["start"],
-            "filetypes": ["sh"],
-            "ignoredRootPath": ["~"]
+            "filetypes": ["sh"]
         },
         "groovy": {
             "command": "java",
