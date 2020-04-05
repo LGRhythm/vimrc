@@ -1,4 +1,5 @@
 {
+    "python.jediEnabled": true,
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "coc.preferences.colorSupport": true,
     "suggest.enablePreview": true,

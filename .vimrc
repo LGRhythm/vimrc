@@ -62,11 +62,13 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-emmet coc-highlight coc-pairs coc-snippet coc-lists coc-yank coc-git
 " coc-json coc-html coc-css coc-wxml coc-eslint coc-python coc-yaml
 " coc-tabnine coc-terminal coc-lua coc-sql coc-texlab
-" ccls - required ccls
+" ccls - install ccls
 " coc-flutter - install flutter dart
 " bash - npm i -g bash-language-server
 " coc-vetur - npm i -g vue-language-server
-" coc-java - required jdk
+" coc-java - install jdk
+" go - install gopls
+" elpy - install jedi
 " coc-prettier
 command! -nargs=0 Prettier :CocComand prettier.formatFile
 
