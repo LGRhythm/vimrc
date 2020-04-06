@@ -21,6 +21,7 @@ set cmdheight=2	"命令行高度
 set scrolloff=5	"头尾与光标保持5行距离
 set autowrite	"切换buffer时自动保存当前文件
 set wildmenu	"自身命令行模式补全
+set clipboard=unnamed "可以访问系统剪切板
 
 " 代码折叠
 set foldmethod=syntax	"基于缩进或语法进行代码折叠
@@ -68,7 +69,7 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-vetur - npm i -g vue-language-server
 " coc-java - install jdk
 " go - install gopls
-" coc-python - npm i -g jedi
+" coc-python - sudo pip install jedi
 " coc-prettier
 command! -nargs=0 Prettier :CocComand prettier.formatFile
 
