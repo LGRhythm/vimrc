@@ -8,7 +8,7 @@
         "dart": {
             "command": "dart",
             "args": [
-                "/usr/local/opt/dart/libexec/bin/snapshots/analysis_server.dart.snapshot",
+                "/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
                 "--lsp"
             ],
             "filetypes": ["dart"],
@@ -32,7 +32,7 @@
         },
         "groovy": {
             "command": "java",
-            "args": ["-jar", "/opt/groovy-language-server/build/libs/groovy-language-server.jar"],
+            "args": ["-jar", "$HOME/.vim/groovy-language-server.jar"],
             "filetypes": ["groovy"]
         },
         "golang": {

@@ -68,7 +68,7 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-vetur - npm i -g vue-language-server
 " coc-java - install jdk
 " go - install gopls
-" elpy - install jedi
+" coc-python - npm i -g jedi
 " coc-prettier
 command! -nargs=0 Prettier :CocComand prettier.formatFile
 
