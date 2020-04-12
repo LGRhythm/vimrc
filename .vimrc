@@ -61,7 +61,7 @@ call plug#begin('$HOME/.vim/plugged')
 " install yarn node
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-emmet coc-highlight coc-pairs coc-snippet coc-lists coc-yank coc-git
-" coc-json coc-html coc-css coc-wxml coc-eslint coc-python coc-yaml
+" coc-json coc-html coc-css coc-wxml coc-eslint coc-yaml coc-prettier
 " coc-tabnine coc-terminal coc-lua coc-sql coc-texlab
 " ccls - install ccls
 " coc-flutter - install flutter dart
@@ -70,7 +70,6 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " coc-java - install jdk
 " go - install gopls
 " coc-python - sudo pip install jedi
-" coc-prettier
 command! -nargs=0 Prettier :CocComand prettier.formatFile
 
 " NERDTree
