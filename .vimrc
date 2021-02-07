@@ -1,7 +1,7 @@
 "================================================
 "          基础设置
 "================================================
-let mapleader=";"	"设置leader快捷键
+let mapleader="\<space>"	"设置leader快捷键
 syntax on	"自动语法高亮
 set nocompatible	"去除vi一致性
 set smartindent	"智能对齐
@@ -44,12 +44,26 @@ function! s:check_back_space() abort
 endfunction
 
 inoremap <silent><expr> <Tab>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<Tab>" :
-    \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<Tab>" :
+            \ coc#refresh()
 
 " 使用回车键结束补全
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" 切换分屏窗口
+map <leader>ww <C-w>w
+map <leader>wj <C-w>j
+map <leader>wk <C-w>k
+map <leader>wh <C-w>h
+map <leader>wl <C-w>l
+
+" 常用操作映射leader键位
+vnoremap <leader>/ :nohls<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>qa :qa<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>wq :wq<CR>
 
 "================================================
 "        plug插件
@@ -73,8 +87,8 @@ command! -nargs=0 Prettier :CocComand prettier.formatFile
 
 " NERDTree
 Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'greggerz/nerdtree-svn-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'greggerz/nerdtree-svn-plugin'
 " let NERDTreeWinPos='left'
 " let NERDTreeWinSize=50
 map <F2> :NERDTreeToggle<CR>
@@ -88,9 +102,29 @@ let g:Tb_TabWrap = 1
 Plug 'majutsushi/tagbar'
 map <F3> :TagbarToggle<CR>
 map <leader>td :Tbbd<CR>
+map <leader>tp :Tbbp<CR>
+map <leader>tn :Tbbn<CR>
 
 " vim-airline
 Plug 'bling/vim-airline'
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+map <leader>ff :FZF<CR>
+let g:fzf_colors =
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
 
 " Vue高亮
 "Plug 'posva/vim-vue'
@@ -106,10 +140,10 @@ Plug 'mhinz/vim-signify'
 " 主题
 Plug 'dracula/vim', { 'as': 'dracula' }
 set rtp+=$HOME/.vim/plugged/dracula/
-Plug 'tomasr/molokai'
-set rtp+=$HOME/.vim/plugged/molokai
-Plug 'ron-rs/ron.vim'
-set rtp+=$HOME/.vim/plugged/ron.vim/
+"Plug 'tomasr/molokai'
+"set rtp+=$HOME/.vim/plugged/molokai
+"Plug 'ron-rs/ron.vim'
+"set rtp+=$HOME/.vim/plugged/ron.vim/
 colorscheme dracula
 
 call plug#end()

@@ -1,4 +1,6 @@
 {
+    "java.home": "/usr/lib/jvm/java-11-jdk/",
+    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:/home/rhythm/.m2/repository/org/projectlombok/lombok/1.18.16/lombok-1.18.16.jar -Xbootclasspath/a:/home/rhythm/.m2/repository/org/projectlombok/lombok/1.18.16/lombok-1.18.16.jar",
     "python.jediEnabled": true,
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "coc.preferences.colorSupport": true,
