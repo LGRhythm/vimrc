@@ -73,8 +73,9 @@ call plug#begin('$HOME/.vim/plugged')
 
 " 自动补全
 " install yarn node
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-let g:coc_global_extensions=['coc-emmet', 'coc-highlight', 'coc-pairs', 'coc-snippets', 'coc-lists', 'coc-yank', 'coc-git', 'coc-json', 'coc-html', 'coc-css', 'coc-wxml', 'coc-eslint', 'coc-python', 'coc-yaml', 'coc-tabnine', 'coc-terminal', 'coc-lua', 'coc-sql', 'coc-texlab', 'coc-flutter', 'coc-vetur', 'coc-java', 'coc-rls', 'coc-prettier', 'coc-omnisharp']
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim',{'branch': 'release'}
+let g:coc_global_extensions=['coc-emmet', 'coc-highlight', 'coc-pairs', 'coc-snippets', 'coc-lists', 'coc-yank', 'coc-git', 'coc-json', 'coc-html', 'coc-css', 'coc-wxml', 'coc-eslint', 'coc-python', 'coc-yaml', 'coc-terminal', 'coc-lua', 'coc-sql', 'coc-texlab', 'coc-flutter', 'coc-vetur', 'coc-java', 'coc-rls', 'coc-prettier', 'coc-omnisharp']
 " ccls - install ccls
 " coc-flutter - install flutter dart
 " bash - npm i -g bash-language-server
@@ -138,13 +139,15 @@ Plug 'preservim/nerdcommenter'
 Plug 'mhinz/vim-signify'
 
 " 主题
-Plug 'dracula/vim', { 'as': 'dracula' }
-set rtp+=$HOME/.vim/plugged/dracula/
+Plug 'joshdick/onedark.vim'
+set rtp+=$HOME/.vim/plugged/onedark.vim/
+"Plug 'dracula/vim', { 'as': 'dracula' }
+"set rtp+=$HOME/.vim/plugged/dracula/
 "Plug 'tomasr/molokai'
 "set rtp+=$HOME/.vim/plugged/molokai
 "Plug 'ron-rs/ron.vim'
 "set rtp+=$HOME/.vim/plugged/ron.vim/
-colorscheme dracula
+colorscheme onedark
 
 call plug#end()
 
