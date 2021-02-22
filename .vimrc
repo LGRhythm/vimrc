@@ -1,3 +1,13 @@
+if has('gui_running')
+    set guioptions-=m
+    set guioptions-=T  " no toolbar
+    autocmd GUIEnter * simalt ~x
+    if has('gui_win32')
+        set guifont=TerminessTTF_Nerd_Font_Mono:h12:cANSI
+    else
+        set guifont=TerminessTTF\ Nerd\ Font\ Mono\ 12
+    endif
+endif
 "================================================
 "          基础设置
 "================================================
@@ -73,7 +83,8 @@ call plug#begin('$HOME/.vim/plugged')
 
 " 自动补全
 " install yarn node
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions=['coc-emmet', 'coc-highlight', 'coc-pairs', 'coc-snippets', 'coc-lists', 'coc-yank', 'coc-git', 'coc-json', 'coc-html', 'coc-css', 'coc-wxml', 'coc-eslint', 'coc-python', 'coc-yaml', 'coc-tabnine', 'coc-terminal', 'coc-lua', 'coc-sql', 'coc-texlab', 'coc-flutter', 'coc-vetur', 'coc-java', 'coc-rls', 'coc-prettier', 'coc-omnisharp']
 " ccls - install ccls
 " coc-flutter - install flutter dart
@@ -111,6 +122,7 @@ Plug 'bling/vim-airline'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 map <leader>ff :FZF<CR>
+map <leader>FF :FZF ~<CR>
 let g:fzf_colors =
             \ { 'fg':      ['fg', 'Normal'],
             \ 'bg':      ['bg', 'Normal'],
@@ -138,13 +150,15 @@ Plug 'preservim/nerdcommenter'
 Plug 'mhinz/vim-signify'
 
 " 主题
-Plug 'dracula/vim', { 'as': 'dracula' }
-set rtp+=$HOME/.vim/plugged/dracula/
+Plug 'joshdick/onedark.vim'
+set rtp+=$HOME/.vim/plugged/onedark.vim/
+"Plug 'dracula/vim', { 'as': 'dracula' }
+"set rtp+=$HOME/.vim/plugged/dracula/
 "Plug 'tomasr/molokai'
 "set rtp+=$HOME/.vim/plugged/molokai
 "Plug 'ron-rs/ron.vim'
 "set rtp+=$HOME/.vim/plugged/ron.vim/
-colorscheme dracula
+colorscheme onedark
 
 call plug#end()
 
